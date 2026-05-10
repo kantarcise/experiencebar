@@ -1,0 +1,29 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "experiencebar"
+version = "0.1.0"
+description = "A terminal MMORPG-style experience bar for gamifying work."
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "tqdm>=4.66",
+]
+
+[dependency-groups]
+dev = [
+    "ruff>=0.11",
+]
+
+[project.scripts]
+experiencebar = "experiencebar.cli:main"
+xpbar = "experiencebar.cli:main"
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B", "SIM"]
